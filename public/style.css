@@ -1,0 +1,96 @@
+*{
+    font-family: 'Alfa Slab One' sans-serif;
+}
+h1{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 80px;
+    letter-spacing: 0.8rem;
+    color: white;
+}
+.logo_custom{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 50px;
+    color: #d82b3a !important;
+    letter-spacing: 0.3rem;
+}
+h2{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 30px;
+}
+@media (max-width: 480px){
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 20px;
+    }
+}
+svg{
+    display: none;
+}
+svg path{
+    fill: #d9e5db;
+    stroke: black;
+    stroke-width: .25;
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+}
+svg path:hover{
+    fill: #e8b5bb;
+    transition: 0.4s;
+    cursor: pointer;
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 1));
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 1));
+}
+#JP-13, #JP-26, #JP-27, #JP-23{
+    fill: #e8b5bb;
+    stroke: red;
+    stroke-width: 1;
+}
+.noHover{
+    pointer-events: none;
+}
+.custom_card{
+    max-width: 400px; 
+    width: 100%;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.custom_card2{
+    max-width: 780px;
+    width: 100%;
+}
+@media (min-width: 780px){
+    svg{
+        display: block;
+    }
+    .custom_card{
+        height: auto;
+        width: auto;
+    }
+    .custom_card2{
+        max-width: 22rem;
+        width: 100%;
+    }
+}
+.call_to_action{
+    background: url('https://www.evolpower.com/wp-content/uploads/2018/01/call-to-action-background.png');
+    background-size: cover;
+    height: 500px;
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search input{
+    border-radius: 30px !important;
+    height: 50px;
+}
+.search{
+    max-width: 400px;
+    width: 100%;
+}
