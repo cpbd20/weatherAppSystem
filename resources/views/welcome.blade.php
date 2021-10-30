@@ -9,174 +9,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
          <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="{{ asset('style.css') }}" rel="stylesheet">
     </head>
     <body>
 
-    <style>
-        *{
-            font-family: 'Alfa Slab One' sans-serif;
-        }
-        h1{
-            font-family: 'Alfa Slab One', cursive;
-            font-size: 80px;
-            letter-spacing: 0.8rem;
-            color: white;
-        }
-        .logo_custom{
-            font-family: 'Alfa Slab One', cursive;
-            font-size: 50px;
-            color: #d82b3a !important;
-            letter-spacing: 0.3rem;
-        }
-        h2{
-            font-family: 'Alfa Slab One', cursive;
-            font-size: 30px;
-        }
-        @media (max-width: 480px){
-            h1{
-                font-size: 30px;
-            }
-            h2{
-                font-size: 20px;
-            }
-        }
-        svg{
-            display: none;
-        }
-        svg path{
-            fill: #d9e5db;
-            stroke: black;
-            stroke-width: .25;
-            -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-            filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-        }
-        svg path:hover{
-            fill: #e8b5bb;
-            transition: 0.4s;
-            cursor: pointer;
-            -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 1));
-            filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 1));
-        }
-        #JP-13, #JP-26, #JP-27, #JP-23{
-            fill: #e8b5bb;
-            stroke: red;
-            stroke-width: 1;
-        }
-        .noHover{
-            pointer-events: none;
-        }
-        .custom_card{
-            max-width: 400px; 
-            width: 100%;
-        }
-        /* .search {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        input.search-bar {
-            border: none;
-            outline: none;
-            padding: 0.4em 1em;
-            border-radius: 24px;
-            background: #7c7c7c2b;
-            color: white;
-            font-family: inherit;
-            font-size: 105%;
-            width: calc(100% - 100px);
-        } */
-        /* https://loading.io/assets/img/c/bg/ball-wed.svg */
-        
-        .hero{
-            /* background: url('https://loading.io/assets/img/p/landing/hero-bg.svg') left top / cover no-repeat fixed;
-            background: linear-gradient(25deg, white 90%, #006666 20%); */
-            /* background-image: url('https://res-3.cloudinary.com/jnto/image/upload/w_2064,h_1300,c_fill,f_auto,fl_lossy,q_auto/v1515928270/hokkaido/Hokkaido1463_13');
-            background-size: cover;
-            background-position: center center;
-            margin-bottom: 5rem; */
-            /* background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%); */
-        }
-        .centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .custom_card2{
-            max-width: 780px;
-            width: 100%;
-        }
-        @media (min-width: 780px){
-            /* .search{
-                display: none;
-            } */
-            svg{
-                display: block;
-            }
-            .custom_card{
-                height: auto;
-                width: auto;
-            }
-            .custom_card2{
-                max-width: 22rem;
-                width: 100%;
-            }
-        }
-        .call_to_action{
-            background: url('https://www.evolpower.com/wp-content/uploads/2018/01/call-to-action-background.png');
-            background-size: cover;
-            height: 500px;
-            border-top: 1px solid white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .search input{
-            border-radius: 30px !important;
-            height: 50px;
-        }
-        .search{
-            max-width: 400px;
-            width: 100%;
-        }
-        
-    </style>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
-        <a class="navbar-brand logo_custom" href="http://127.0.0.1:8000/">I JAPAN</a>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button> -->
-
-        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-            <!-- <form class="form-inline my-2 my-lg-0"> -->
-                <div class="search">
-                    <input type="text" class="search-bar text-capitalize form-control m-auto" placeholder="Search">
-                    <!-- <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
-                        width="1.5em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
-                        </path>
-                        </svg></button> -->
-                </div>
-            <!-- </form> -->
-        <!-- </div> -->
-    </nav>
-        <!-- <div class="row m-0 my-3">
-            <div class="container">
-                <div class="col-md-6">
-                        <h1 class="text-center">Welcome to Japan</h1>
-                </div>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+            <a class="navbar-brand logo_custom" href="http://127.0.0.1:8000/">I JAPAN</a>
+            <div class="search">
+                <input type="text" class="search-bar text-capitalize form-control m-auto" placeholder="Search">
             </div>
-        </div> -->
+        </nav>
+        <!-- Navigation Bar -->
+
+        <!-- Landing Page -->
         <div class="hero" style="
             background-image: url(https://images.pexels.com/photos/208321/pexels-photo-208321.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
             background-size: cover;
             background-position: center center;
             margin-bottom: 5rem;">
             <div class="py-2" style="background: rgba(0, 0, 0, 0.7); /* Black color with 50% alpha/opacity */">
-                <div class="container my-5" style="">
+                <div class="container my-5">
                     <div class="row">
-                        <!-- <div class="card shadow-lg p-3 mb-5 bg-white rounded col-md-4"> -->
                         <div class="col-md-6">
                             <h5 class="text-light">Welcome to</h5>
                             <h1>JAPAN</h1>
@@ -191,7 +45,6 @@
                                         </div>
                                         <div class="d-flex justify-content-around align-items-center">
                                             <div class="d-flex flex-column">
-                                                <!-- <img src="https://openweathermap.org/img/wn/04n.png" height="120" alt="" class="icon" /> -->
                                                 <img src="{{ url('svg/cloud-svgrepo-com.svg') }}" height="50" alt="" class="" />
                                                 <div class="description text-center text-capitalize mt-3"></div>
                                             </div>
@@ -208,9 +61,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="col-md-8">
-                            <img id="cardImage" class="img-fluid" src="" alt="Card image cap">
-                        </div> -->
                         <div class="col-md-6">
                             <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" mapsvg:geoViewBox="123.658963 45.523885 145.820743 24.217586" width="437.33432" height="516.01587">
                                 <path d="m 260.23993,277.87889 -0.17,-0.35 0.5,-1.77 -0.86,-1.4 0.11,-1.46 0.46,-1.37 -0.25,-0.32 -0.89,0.36 -1.14,-0.35 0,0 -0.97,-1.57 -0.32,-1.21 0,0 0.22,-2.19 1.69,-2.97 1.28,0.15 1.66,-0.5 1.48,-1.13 -0.02,0.57 1.18,0.87 -0.03,0.65 0.5,0.21 -0.09,0.48 0.27,0.32 0.32,0.15 0.3,-0.21 0.94,0.39 0.52,0.71 0.85,-0.17 0.92,-0.73 0.63,-0.01 0.75,0.47 -0.07,0.24 0.84,0.05 -0.02,0.31 0.99,0.5 1.72,-1.4 0.8,-0.08 0,0 -0.32,0.83 0.64,0.81 -0.01,0.51 1.26,-0.26 0.85,-0.55 1.56,0.3 0.22,0.39 0.84,-0.27 0,0 -0.31,0.98 0.52,0.5 -0.58,0.57 0.08,0.47 -0.46,0.24 -1.46,2 -0.03,1.06 -1.28,1.93 -2.75,1.53 -0.43,1.23 0.16,2.32 0,0 -3.41,0.79 -3.43,1.23 -2.03,0.27 -0.26,-0.21 0.8,-1.71 0.49,0.05 0.25,0.57 2.36,-1.02 0.86,-0.53 -0.1,-0.44 0.45,-0.36 0.48,0.15 0.22,-0.19 0.21,-1.14 -0.57,-0.7 -1.69,-0.31 -0.52,0.46 -0.24,0.93 -0.81,-0.57 -2.13,0.25 -1.42,-1.37 0.31,-1.08 -0.44,-0.19 -0.42,0.59 -0.27,2.22 1.02,0.93 0.15,0.88 -1.69,-0.6 -0.77,-0.73 z" title="Aichi" id="JP-23"/>
@@ -266,8 +116,8 @@
                 </div>
             </div>
         </div>
+        <!-- Landing Page -->
 
-        <!-- <div id="foursquare" class="d-flex justify-content-around align-items-center flex-wrap" style="gap: 1em;"></div> -->
         <div id="result" class="container">
             <h2 class="ml-3 my-3"></h2>
             <div id="foursquare" class="row m-0"></div>
@@ -290,261 +140,7 @@
             <center><span class="logo_custom" style="font-size: 20px !important;">I JAPAN</span></center>
             <center><span class="copyright text-dark">Copyright &copy;  <script>document.write(new Date().getFullYear())</script></center>
         </footer>
-
-        <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
-        <script defer>
-            var cityMap = document.querySelectorAll('svg path');
-            // var cityMapAll = document.querySelectorAll('svg path');
-            // cityMap.addEventListener('mouseover', function(){
-            //     alert('nice');
-            // })
-            const possiblePlace = ['Osaka', 'Kyoto', 'Tokyo', 'Nagoya']
-            var resultTitle = document.querySelector('#result h2');
-            for (let i = 0; i < cityMap.length; i++) {
-                cityMap[i].addEventListener("mouseover", function() {
-                    // if(possiblePlace.includes(cityMap[i].getAttribute('title'))){
-                    //     setTimeout(() => {
-                    //         weather.fetchWeather(cityMap[i].getAttribute('title'))
-                    //     }, 500)
-                    // }
-                    weather.fetchWeather(cityMap[i].getAttribute('title'))
-                    weather.fetchvenue(cityMap[i].getAttribute('title'))
-                    resultTitle.innerText = "Available Places in " + cityMap[i].getAttribute('title');
-                });
-            }
-            let weather = {
-                apiKey: "9a888db6c3136d8be807e980d9706a8c",
-                fetchWeather: function (city) {
-                    fetch(
-                    "https://api.openweathermap.org/data/2.5/weather?q=" +
-                        city +
-                        "&units=metric&appid=" +
-                        this.apiKey
-                    )
-                    .then((response) => {
-                        if (!response.ok) {
-                            alert("No weather found.");
-                            throw new Error("No weather found.");
-                        }
-                        return response.json();
-                    })
-                    .then((data) => this.displayWeather(data));
-                },
-                displayWeather: function (data) {
-                    var weatherCard = document.querySelector('.weather');
-                    var cardImage = document.querySelector('#cardImage');
-                    // var cardImage = document.querySelector('.card');
-                    weatherCard.classList.remove('d-none');
-                    // cardImage.classList.remove('d-none');
-                    const { name } = data;
-                    const { icon, description } = data.weather[0];
-                    const { temp, humidity } = data.main;
-                    const { speed } = data.wind;
-                    document.querySelector(".city").innerText = "Weather in " + name;
-                    // document.querySelector(".icon").src =
-                    // "https://openweathermap.org/img/wn/" + icon + ".png";
-                    document.querySelector(".description").innerText = description;
-                    // document.querySelector(".temp").innerText = temp + "°C";
-                    document.querySelector(".temp").innerText = temp;
-                    document.querySelector(".humidity").innerText = humidity + "%";
-                    document.querySelector(".wind").innerText = speed + " km/h";
-                    document.querySelector(".weather").classList.remove("loading");
-                    document.querySelector('#cardImage').src ="https://source.unsplash.com/1700x1000/?" + name;
-                    
-                    // document.body.style.backgroundImage =    
-                    // "url('https://source.unsplash.com/1600x900/?" + name + "')";
-                    // cardImage.style.backgroundImage =
-                    // "url('https://source.unsplash.com/1600x900/?" + name + "')";
-                },
-                search: function () {
-                    this.fetchWeather(document.querySelector(".search-bar").value);
-                    this.fetchvenue(document.querySelector(".search-bar").value);
-                    var resultTitle = document.querySelector('#result h2');
-                    resultTitle.innerText = "Available Places in " + document.querySelector(".search-bar").value;
-
-                },
-                displayVenue: function (data) {
-                    // console.log(data[9].name)
-                    const element = document.querySelector('#foursquare');
-                    var html = '';
-                    // const html = data.map((d) => {
-                    //     return `<li>${d.name}</li>`;
-                    // })
-                    element.innerHTML = '';
-                    function getCat(data){
-                        newHtml = '';
-                        for(x=0;x!=data.length;x++){
-                            newHtml = `<span class="badge badge-warning d-inline-block">${data[x].name}</span>`;
-                        }
-                        return newHtml;
-                    }
-                    function getAddress(data){
-                        newHtml = '';
-                        if(data.length > 0){
-                            newHtml += `<div class="my-2">`;
-                            for(x=0;x!=data.length;x++){
-                                // if(data[x] !== 'Japan'){
-                                    newHtml += `<p class="m-0">${data[x]}</p>`;
-                                // }
-                                // else if(data.length == 2){
-                                //     newHtml += `<p>${data[0]}</p>`;
-                                //     newHtml += `<p>${data[1]}</p>`;
-                                // }
-                            }
-                            newHtml += `</div>`;
-                        }else{
-                            newHtml += `<p>Click the button to view address</p>`;
-                        }
-                        
-                        return newHtml;
-                    }
-                    // console.log()
-
-                    for(i=0;i!=data.length;i++){
-                        this.getImageVenue(data[i].id)
-                        // ${getAddress(data[i].location.formattedAddress)}
-                        element.innerHTML += 
-                        `<div class="col-lg-4 col-md-6 col-sm-12 my-2"><div class="card custom_card2">
-                            <img class="card-img-top" src="https://asti.dost.gov.ph/pedro/img/no-image.png">
-                            <div class="card-body">
-                                <h5 class="card-title text-truncate">${data[i].name}</h5>
-                                ${getCat(data[i].categories)}
-                                <div class="my-4 place_description${i}">
-                                ${this.getSearchDescription(data[i].name, i)}
-                                </div>
-                                <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=${data[i].name}" class="btn btn-outline-warning text-dark col-md-12">
-                                <img src="http://127.0.0.1:8000/svg/place-svgrepo-com.svg" height="30" alt="" class="mr-1" />
-                                Find Location</a>
-                            </div>
-                        </div></div>`;
-                    }
-                },
-                fetchvenue: function (search) {
-                    const d = new Date();
-                    const date = d.toISOString().slice(0, 10);
-                    var stringDate = date.replace(/-/g, "");
-                    const client_id = 'ITXP2TX2DLBRDIFFIAGPYCGKCMM0YHEISB0XOAOGSABLLHXT';
-                    const client_secret = 'YPHKTVUKBHOTJE2HWO1220VEUADDPW2KMXTRJ1DQGW1BSZN4';
-                    //backup
-                    // const client_id = 'IOR3FSZXJMPBBM0T5A0SHJIWVHZYCLLFK5ABSX3PQDRMVYU0';
-                    // const client_secret = 'BRPPSBSHOMCVHZLESMU35K22Q5UNLRGSE4AQMR3IEWLTUZM0';
-                    fetch(`https://api.foursquare.com/v2/venues/search?client_id=${client_id}&client_secret=${client_secret}&ll=40.7,-74&query=${search}&near=${search}&v=${stringDate}`).then((res) => {
-                        if (!res.ok) {
-                            throw new Error("No venue found.");
-                        }
-                        return res.json();
-                    })
-                    .then((data) => {
-                        this.displayVenue(data['response']['venues']);
-                    });
-                },
-                getImageVenue: function (id) {
-                    const d = new Date();
-                    const date = d.toISOString().slice(0, 10);
-                    var stringDate = date.replace(/-/g, "");
-                    const client_id = 'ITXP2TX2DLBRDIFFIAGPYCGKCMM0YHEISB0XOAOGSABLLHXT';
-                    const client_secret = 'YPHKTVUKBHOTJE2HWO1220VEUADDPW2KMXTRJ1DQGW1BSZN4';
-                        fetch(`https://api.foursquare.com/v2/venues/${id}/photos?client_id=${client_id}&client_secret=${client_secret}&ll=40.7,-74&v=${stringDate}
-                        `)
-                        .then((res) => {
-                            console.log(res)
-                        })
-                },
-                getSearchDescription: function (search, n){
-                    // fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${search}&format=json`, {
-                    //     mode: 'cors',
-                    //     headers: {
-                    //         'Access-Control-Allow-Origin':'*'
-                    //     }
-                    // })
-                    //     .then((response) => console.log(response));
-                    var url = "https://en.wikipedia.org/w/api.php"; 
-
-                    var params = {
-                        action: "query",
-                        list: "search",
-                        srsearch: search,
-                        format: "json"
-                    };
-
-                    url = url + "?origin=*";
-                    Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
-
-                    // var newHtml = 'asdkasoi';
-                    fetch(url)
-                        .then(function(response){return response.json();})
-                        .then(function(response) {
-                            // console.log(response.query.search[0].snippet !== undefined)
-                            // console.log(params.srsearch)
-                            // if (response.query.search[0].title === "Nelson Mandela"){
-                            //     console.log("Your search page 'Nelson Mandela' exists on English Wikipedia" );
-                            // }
-                            var newHtml = '';
-                            // const search = response.query.search;
-                            // for(x=0;x!=search.length;x++){
-                            //     if(response.query.search[x].title === search){
-                                // if(response.query.search[0].snippet !== undefined){
-                            // console.log(response.query.search[0].snippet)
-                                    const element = document.querySelector(`.place_description${n}`);
-                                    if(response.query.search.length === 0){
-                                        element.innerHTML = `<p>No Description Available</p>`;
-                                    }else{
-                                        element.innerHTML = response.query.search[0].snippet;
-                                    }
-                                // }
-                            //     }
-                            // }
-                                // return console.log(newHtml)
-                            // return this.newHtml;
-                            // console.log(response.query.search[0].snippet)
-                        })
-                        .catch(function(error){console.log(error);});
-                }
-            }
-                        
-            // document.querySelector(".search button").addEventListener("click", function () {
-            // weather.search();
-            // });
-
-            document
-            .querySelector(".search-bar")
-            .addEventListener("keyup", function (event) {
-                if (event.key == "Enter") {
-                weather.search();
-                }
-            });
-            function clearSearch(){
-                var weatherCard = document.querySelector('.weather');
-                // var cardImage = document.querySelector('#cardImage');
-                weatherCard.classList.add('d-none');
-                // cardImage.classList.add('d-none');
-            }
-            clearSearch();
-            // console.log(weather.fetchWeather("Tokyo"))
-            weather.fetchWeather("Tokyo")
-            weather.fetchvenue("Tokyo")
-            resultTitle.innerText = "Available Places in Tokyo";
-            // weather.getSearchDescription("Tokyo Opera City");
-            // https://source.unsplash.com/1600x900/?map
-
-            function changeImage() {   
-                var BackgroundImg = [`url(https://images.pexels.com/photos/4058530/pexels-photo-4058530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`,
-                                `url(https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`,
-                                `url(https://images.pexels.com/photos/356269/pexels-photo-356269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)`];
-                var i = Math.floor((Math.random() * 3));
-                const element = document.querySelector('.hero');
-                // console.log(element.style.backgroundImage = BackgroundImg[i]);
-                element.style.backgroundImage = BackgroundImg[i];
-            }
-
-            // changeImage();
-            setInterval(() => {
-                changeImage();
-            }, 3000)
-            
-                   
-            
-        </script>
+        <script src="{{ asset('script.js') }}" defer></script>
     </body>
 </html>
 
